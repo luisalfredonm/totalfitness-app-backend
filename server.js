@@ -10,6 +10,7 @@ var cookieParser = require('cookie-parser')
 const userRoute = require("./routes/userRoute");
 const productRoute = require("./routes/productRoute");
 const contactRoute = require("./routes/contactRoute");
+const clientRoute = require("./routes/clientRoute");
 
 
 const path = require("path");
@@ -23,7 +24,8 @@ app.use(cookieParser());
 app.use(express.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(cors({
-    origin: ["http://localhost:3000", "https://pinvent-app.vercel.app"],
+    origin: ["http://localhost:3000"],
+    // origin: ["http://localhost:3000", "https://pinvent-app.vercel.app"],
     credentials: true,
   }));
 
@@ -33,6 +35,7 @@ app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 app.use("/api/user", userRoute);
 app.use("/api/products", productRoute);
 app.use("/api/contactus", contactRoute);
+app.use("/api/clients", clientRoute);
 
 //Routes
 
