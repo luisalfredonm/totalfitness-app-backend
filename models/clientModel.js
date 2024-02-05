@@ -9,21 +9,39 @@ const clientSchema = mongoose.Schema(
     },
     name: {
       type: String,
-       required: [true, "Please add a name"],
+      required: [true, "Please add a name"],
       trim: true,
     },
-   
-    // phone: {
-    //   type: String,
-    //   required: [true, "Please add the email"],
-    //   trim: true,
-    // },
-    // rol: {
-    //   type: String,
-    //   required: [true, "Please add a rol"],
-    //   trim: true,
-    // },
-   
+    sku: {
+      type: String,
+      required: true,
+      default: "SKU",
+      trim: true,
+    },
+    category: {
+      type: String,
+      required: [true, "Please add a category"],
+      trim: true,
+    },
+    quantity: {
+      type: String,
+      required: [true, "Please add a quantity"],
+      trim: true,
+    },
+    price: {
+      type: String,
+      required: [true, "Please add a price"],
+      trim: true,
+    },
+    description: {
+      type: String,
+      required: [true, "Please add a description"],
+      trim: true,
+    },
+    image: {
+      type: Object,
+      default: {},
+    },
   },
   {
     timestamps: true,
